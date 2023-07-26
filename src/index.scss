@@ -1,0 +1,10 @@
+@import url(./vendor/normalize.css);
+
+body {
+  text-align: center;
+  background: var(--background-main, #FAFCFF);
+  color: var(--text-black, #21201f);
+  font-style: normal;
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+}

@@ -1,0 +1,15 @@
+.header {
+  box-sizing: border-box;
+  padding: 32px 60px 24px;
+  display: flex;
+  justify-content: space-between;
+
+  .header__hidden-element {
+    width: 140px;
+  }
+
+  .header__logo {
+    width: 224px;
+    height: 48px;
+  }
+}
