@@ -1,7 +1,9 @@
+import React, { useState } from 'react';
 import './Main.scss';
 import Input from '../Input/Input';
 
-function Main () {
+function Main ({onText}) {
+
   return (
     <main className='content'>
       <h1 className='content__title'>Быстрый способ превратить хаотичные мысли в чистый текст</h1>
@@ -11,7 +13,7 @@ function Main () {
         <ul className='content__card'>Получайте результат</ul>
       </li>
 
-      <Input />
+      { onText ? <Input /> : ''}
     </main>
   )
 }

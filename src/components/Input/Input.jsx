@@ -3,7 +3,7 @@ import './Input.scss';
 import SendButton from '../../images/send-message.svg';
 
 function Input () {
-  const [onLoading, setOnLoading] = useState(false)
+  const [onLoading, setOnLoading] = useState(false);
   const [isValid, setIsValid] = useState(true);
   const [search, setSearch] = useState('');
 
