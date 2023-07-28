@@ -34,7 +34,6 @@
       color: var(--text-black, #21201f);
       align-items: center;
       font-family: "Unbounded";
-
     }
 
     .info__text {
@@ -48,47 +47,40 @@
   }
 }
 
-@media screen and (max-width: 874px){
- .info {
-  .info__title {
-    font-size: 20px;
-    line-height: 24px; 
-    // max-width: 400px;
-  }
-
-  .info__container {
-align-items: center;
-flex-direction: column;
-    gap: 16px;
-
-    .info__card {
-      width: 90%;
-      height: 107px;
+@media screen and (max-width: 874px) {
+  .info {
+    .info__title {
+      font-size: 20px;
+      line-height: 24px;
     }
 
-    .info__text {
-      max-width: 220px;
-    }
-  }
+    .info__container {
+      align-items: center;
+      flex-direction: column;
+      gap: 16px;
 
+      .info__card {
+        width: 90%;
+        height: 107px;
+      }
+
+      .info__text {
+        max-width: 220px;
+      }
+    }
   }
 }
 
-@media screen and (max-width: 658px){
+@media screen and (max-width: 658px) {
   .info {
-   .info__title {
-     max-width: 300px;
-   }
- 
-   .info__container {
-     &__card {
-       width: 100%;
-     }
- 
-     .info__text {
-       max-width: 220px;
-     }
-   }
- 
-   }
- }
+    .info__title {
+      max-width: 300px;
+    }
+
+    .info__container {
+      .info__card {
+        width: 100%;
+      }
+    }
+  }
+}

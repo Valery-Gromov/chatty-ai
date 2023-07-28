@@ -14,11 +14,12 @@ console.log(onText)
     <main className='content'>
 
       <div className='content__box'>
-    {  onText ? <Info /> : ''
-    }
+
+        {  onText ? <Info /> : ''}
+
       </div>
 
-    <div>
+    <div className=''>
       {/* { onText ? <Input /> : <AudioRecorder /> } */}
 
       {/* <Checkbox setOnText={setOnText} onText={onText} /> */}
