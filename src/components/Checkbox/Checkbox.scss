@@ -1,4 +1,60 @@
-.filter {
+.rom {
+  border: 1px solid red;
+}
+
+.checkbox {
+  position: relative;
+  width: 288px;
+height: 48px;
+border-radius: 56px;
+background: var(--background-dark-gray, #E8EBED);
+margin: 24px auto 0;
+display: flex;
+box-sizing: border-box;
+padding: 4px;
+
+.checkbox__invisible {
+  position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden; 
+    clip-path: inset(0 0 0 0);
+  margin: auto;
+}
+
+.checkbox__element {
+  width: 140px;
+height: 40px;
+border-radius: 44px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.checkbox__icon {
+  width: 20px;
+height: 20px;
+margin-right: 8px;
+}
+
+.checkbox__text {
+font-size: 14px;
+font-weight: 600;
+line-height: 16px;
+}
+
+.active {
+  background: var(--system-background-light-primary, #FFF);
+  box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04), 0px 3px 8px 0px rgba(0, 0, 0, 0.12);
+}
+
+
+}
+
+
+
+
+/* .filter {
   height: 40px;
   box-sizing: border-box;
   padding: 0 0 0 29px;
@@ -12,7 +68,7 @@
 }
 
 /* кнопка переключатель */
-.filter.check-active .filter__checkbox-switch {
+/* .filter.check-active .filter__checkbox-switch {
   left: 18px;
   background-color: #F5F5F5;
 }
@@ -48,9 +104,9 @@
   font-size: 13px;
   line-height: 18px;
   margin: 0 0 0 14px;
-}
+} */
 
-@media screen and (max-width: 924px) {
+/* @media screen and (max-width: 924px) {
   .filter {
     padding: 0 0 0 19px;
   }
@@ -84,4 +140,4 @@
   .filter__max {
     display: none;
   }
-}
+} */ 

@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import './Main.scss';
 import Input from '../Input/Input';
+// import AudioRecorder from '../AudioRecorder/AudioRecorder';
+import Checkbox from '../Checkbox/Checkbox';
 
-function Main ({onText}) {
+
+function Main () {
+  // const [onText, setOnText] = useState(true);
 
   return (
     <main className='content'>
@@ -13,7 +17,12 @@ function Main ({onText}) {
         <ul className='content__card'>Получайте результат</ul>
       </li>
 
-      { onText ? <Input /> : ''}
+      
+
+      {/* { onText ? <Input /> : ''} */}
+      <Input />
+      <Checkbox />
+      {/* <AudioRecorder /> */}
     </main>
   )
 }
