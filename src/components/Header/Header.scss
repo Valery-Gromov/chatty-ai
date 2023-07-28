@@ -3,6 +3,7 @@
   padding: 32px 60px 24px;
   display: flex;
   justify-content: space-between;
+align-items: center;
 
   .header__history {
     width: 140px;
@@ -36,7 +37,7 @@
     padding: 16px;
 
     .header__history {
-      max-width: 30px;
+      max-width: 80px;
 
       .header__text {
         display: none;
