@@ -4,8 +4,25 @@
   display: flex;
   justify-content: space-between;
 
-  .header__hidden-element {
+  .header__history {
     width: 140px;
+    color: #000;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .header__history-image {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+    .header__text {
+      color: #000;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 24px;
+      margin: 0;
+    }
   }
 
   .header__logo {
