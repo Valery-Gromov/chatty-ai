@@ -19,11 +19,12 @@ console.log(onText)
 
       </div>
 
-    <div className=''>
-      {/* { onText ? <Input /> : <AudioRecorder /> } */}
+    <div className='form-block'>
+      { onText ? <Input /> : <AudioRecorder /> }
 
-      {/* <Checkbox setOnText={setOnText} onText={onText} /> */}
-    </div>  
+      <Checkbox setOnText={setOnText} onText={onText} />
+    </div> 
+
     </main>
   )
 }
