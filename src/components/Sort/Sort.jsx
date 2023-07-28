@@ -2,6 +2,7 @@ import React from "react";
 import "./Sort.scss";
 import Icon from "../../images/search-language.svg";
 import { arrSort } from "../../constants/data";
+import '../Animation/Animation.scss';
 
 // import "../Animation/Animation.css";
 
@@ -19,7 +20,7 @@ function Sort() {
 
   return (
     <div className="sort">
-      <div onClick={() => setOpen(!open)} className='sort__label'>
+      <div onClick={() => setOpen(!open)} className='sort__label animation__link'>
         <div className="sort__text-box">
           <img className="sort__image" src={sortImage} />
           <span className="sort__text option sort__text-option animation__link">{sortName}</span>
@@ -32,7 +33,7 @@ function Sort() {
         <ul className={`sort__popup ${open ? 'active' : ''}`}>
 
             {arrSort.map((data, i) => (
-              <li onClick={() => onClickListIttem(i)} key={i} className={`sort__element animation__link ${selected === i ? "sort__link_active" : ""}`}>
+              <li onClick={() => onClickListIttem(i)} key={i} className={`sort__element sort__link animation__link ${selected === i ? "sort__link_active" : ""}`}>
                 <img className="sort__icon sort__list-icon" src={data.image}/>
                 {data.text}
               </li>

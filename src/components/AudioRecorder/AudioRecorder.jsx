@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { API_KEY_ID, API_KEY_SECRET, LANG, FILE_PATH, URL_CREATE, RESULT_TYPE } from "../../constants/constants";
 import Microphone from '../../images/microphone.svg';
+import './AudioRecorder.scss';
+import '../Animation/Animation.scss';
 
 const AudioRecorder = () => {
   const [onRecording, setOnRecording] = useState(false);
@@ -93,16 +95,15 @@ const AudioRecorder = () => {
   return (
     <div className="recorder">
 
-      <button className="button" onClick={ !onRecording ? startRecording : stopRecording}>
-         {
-
-            !onRecording ? (<img className='button__image' src={Microphone}/>) : (<div className="button__icon"></div>)
-
+      <button className="button animation__button" onClick={ !onRecording ? startRecording : stopRecording}>
+         { !onRecording
+         ? (<img className='button__image' src={Microphone}/>)
+         : (<div className="button__icon"></div>)
          } 
       </button>      
   
       {/* <button onClick={playAudio} disabled={!audioSrc}>Play Audio</button> */}
-      <div className="button__block">
+      {/* <div className="button__block">
       <button className={`recorder__button ${!audioSrc && 'disabled'}`} onClick={sendAudio} disabled={!audioSrc}>
         Send Audio
       </button>
@@ -110,9 +111,9 @@ const AudioRecorder = () => {
       <button className={`recorder__button ${!taskId && 'disabled'}`}  onClick={returnAudio} disabled={!taskId}>
         Return Audio
       </button>
-      </div>
+      </div> */}
 
-      {audioSrc && <audio src={audioSrc} controls />}
+      {/* {audioSrc && <audio src={audioSrc} controls />} */}
       
     </div>
   );

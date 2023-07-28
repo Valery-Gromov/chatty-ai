@@ -1,25 +1,24 @@
 .rom {
-  border: 1px solid red;
+  // border: 1px solid hotpink;
 }
 
 .checkbox {
-  position: relative;
-  width: 288px;
+width: 288px;
 height: 48px;
 border-radius: 56px;
-background: var(--background-dark-gray, #E8EBED);
+background: #E8EBED;
 margin: 24px auto 0;
 display: flex;
 box-sizing: border-box;
 padding: 4px;
 
-.checkbox__invisible {
+input.checkbox__invisible {
+  // display: none;
   position: absolute;
-    width: 1px;
+    width: 100px;
     height: 1px;
     overflow: hidden; 
-    clip-path: inset(0 0 0 0);
-  margin: auto;
+    visibility: hidden;
 }
 
 .checkbox__element {

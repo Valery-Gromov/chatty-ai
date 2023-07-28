@@ -4,6 +4,10 @@
   padding: 96px 0 64px;
   // border: 1px solid red;
 
+  .content__box {
+    margin: 0 auto 376px;
+  }
+
   .content__title {
     color: var(--text-black, #21201f);
     text-align: center;
@@ -34,11 +38,18 @@
       flex-direction: column;
       justify-content: center;
       color: var(--text-black, #21201f);
-      text-align: center;
+      align-items: center;
       font-family: "Unbounded";
+
+    }
+
+    .content__text {
+      text-align: center;
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
+      margin: 0;
+      width: 220px;
     }
   }
 }

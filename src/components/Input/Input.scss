@@ -1,7 +1,7 @@
 .form {
   box-sizing: border-box;
   padding: 0 24px;
-  margin: 376px auto 0;
+  margin: 0 auto;
   width: 576px;
 height: 56px;
 border: none;
@@ -14,12 +14,19 @@ border: none;
   border-radius: 46px;
 background: var(--white, #FFF);
 
+&:hover {
+border: 1px solid #21201F;
+}
+
+
 .form__input {
   border: none;
   outline: none;
   height: 20px;
   width: calc(100% - 20px);
 }
+
+
 
 .form__button {
   padding: 0;
