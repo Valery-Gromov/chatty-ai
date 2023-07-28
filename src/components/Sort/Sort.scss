@@ -87,3 +87,14 @@
   }
 }
 
+
+@media screen and (max-width: 874px) {
+.sort__text {
+  display: none;
+}
+
+.sort {
+  max-width: 80px;
+}
+
+}

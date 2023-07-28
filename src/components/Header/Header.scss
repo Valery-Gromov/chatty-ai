@@ -30,3 +30,22 @@
     height: 48px;
   }
 }
+
+@media screen and (max-width: 874px) {
+  .header {
+    padding: 16px;
+
+    .header__history {
+      max-width: 30px;
+
+      .header__text {
+        display: none;
+      }
+    }
+
+    .header__logo {
+      width: 149px;
+      height: 31.929px;
+    }
+  }
+}

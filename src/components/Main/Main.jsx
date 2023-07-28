@@ -27,10 +27,11 @@ console.log(onText)
     }
       </div>
 
-      { onText ? <Input /> : <AudioRecorder /> }
+    <div>
+      {/* { onText ? <Input /> : <AudioRecorder /> } */}
 
-      <Checkbox setOnText={setOnText} onText={onText} />
-      
+      {/* <Checkbox setOnText={setOnText} onText={onText} /> */}
+    </div>  
     </main>
   )
 }

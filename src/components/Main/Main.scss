@@ -1,11 +1,16 @@
 .content {
   width: 100%;
+  height: 920px;
   box-sizing: border-box;
   padding: 96px 0 64px;
-  // border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid red;
 
   .content__box {
-    margin: 0 auto 376px;
+    margin: 0 auto;
   }
 
   .content__title {
@@ -52,4 +57,12 @@
       width: 220px;
     }
   }
+}
+
+@media screen and (max-width: 874px){
+  
+}
+
+@media screen and (max-width: 874px){
+  
 }
