@@ -4,7 +4,7 @@ import Icon from "../../images/search-language.svg";
 import { arrSort } from "../../constants/data";
 
 function Sort() {
-  const [open, setOpen] = React.useState(false);
+  const [isOpenSort, setIsOpenSort] = React.useState(false);
   const [selected, setSelected] = React.useState(0);
 
   const sortName = arrSort[selected].text;
@@ -12,22 +12,22 @@ function Sort() {
 
   const onClickListIttem = (i) => {
     setSelected(i);
-    setOpen(false);
+    setIsOpenSort(false);
   }
 
   return (
     <div className="sort">
-      <div onClick={() => setOpen(!open)} className='sort__label'>
+      <div onClick={(e) => setIsOpenSort(!isOpenSort)} className='sort__label'>
         <div className="sort__text-box">
           <img className="sort__image" src={sortImage} /> 
           <span className="sort__text option sort__text-option">{sortName}</span>
         </div>
 
-        <img className={`sort__icon ${open ? 'opened' : ''}`} src={Icon} />
+        <img className={`sort__icon ${isOpenSort ? 'opened' : ''}`} src={Icon} />
       </div>
 
-      {open && (
-        <ul className={`sort__popup ${open ? 'active' : ''}`}>
+      {isOpenSort && (
+        <ul className={`sort__popup ${isOpenSort ? 'active' : ''}`}>
 
             {arrSort.map((data, i) => (
               <li onClick={() => onClickListIttem(i)} key={i} className={`sort__element sort__link ${selected === i ? "sort__link_active" : ""}`}>

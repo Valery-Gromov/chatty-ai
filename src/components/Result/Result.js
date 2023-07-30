@@ -1,6 +1,7 @@
 import deleteButton from '../images/delete.svg';
 import copyButton from '../images/copy.svg';
 import shareButton from '../images/share.svg';
+import './Result.css';
 
 function Results() {
     return (
