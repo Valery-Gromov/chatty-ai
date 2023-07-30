@@ -8,7 +8,7 @@ function Input (props) {
   const [isValid, setIsValid] = useState(false);
   const [search, setSearch] = useState('');
 
-  const { handleContentState } = props;
+  const { handleContentState, handleTextRender } = props;
 
 
   function handleSearch(e) {
@@ -22,9 +22,13 @@ function Input (props) {
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    // localStorage.setItem(searchType, search);
-    console.log('submit')
+    handleTextRender();
+    localStorage.setItem('original-text', search);
+    // getMessages(search);
+    console.log('submit');
   }
+
+  console.log(search);
 
   return (
     <form className='form' onSubmit={handleFormSubmit} noValidate>
