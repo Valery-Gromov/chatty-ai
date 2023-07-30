@@ -7,28 +7,36 @@ import Checkbox from '../Checkbox/Checkbox';
 import Results from '../Results/Results';
 
 
-function Main () {
+function Main (props) {
   const [onText, setOnText] = useState(true);
   const [showInfo, setShowInfo] = useState(true);
   const [showResults, setShowResults] = useState(false);
+  const [textRender, setTextRender] = useState(false);
+
+  const { getMessages, handlePopupIsOpen } = props
 
   const handleContentState = () => {
     setShowInfo(false);
     setShowResults(true);
   }
 
+  const handleTextRender = () => {
+    setTextRender(!textRender);
+  }
+
+console.log(onText)
   return (
     <main className='content'>
 
       <div className='content__box'>
 
         { showInfo ? <Info /> : ''}
-        { showResults && <Results />}
+        { showResults && <Results textRender={textRender} getMessages={getMessages} handlePopupIsOpen={handlePopupIsOpen} />}
 
       </div>
 
     <div className='form-block'>
-      { onText ? <Input handleContentState={handleContentState} /> : <AudioRecorder handleContentState={handleContentState} /> }
+      { onText ? <Input handleContentState={handleContentState} handleTextRender={handleTextRender} /> : <AudioRecorder handleContentState={handleContentState} getMessages={getMessages} /> }
 
       <Checkbox setOnText={setOnText} onText={onText} />
     </div> 
