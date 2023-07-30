@@ -4,29 +4,6 @@
   align-items: center;
   flex-direction: column;
 
-
-
-  .recorder__time-block {
-    margin: 0 0 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-  .recorder__time-block-image {
-    width: 67px;
-    height: 48px;
-  }
-    .recorder__time-block-time {
-      color:  #21201f;
-      font-family: 'Unbounded';
-      font-size: 32px;
-      font-weight: 400;
-      line-height: 40px;
-      margin: 8px 0 0;
-    }
-  }
-
   .recorder__button-block {
     display: flex;
     justify-content: center;

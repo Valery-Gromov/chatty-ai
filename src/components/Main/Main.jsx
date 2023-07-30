@@ -17,7 +17,6 @@ function Main () {
     setShowResults(true);
   }
 
-console.log(onText)
   return (
     <main className='content'>
 
@@ -33,6 +32,8 @@ console.log(onText)
 
       <Checkbox setOnText={setOnText} onText={onText} />
     </div> 
+
+    {/* <MedRecorder /> */}
 
     </main>
   )
