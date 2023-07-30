@@ -26,10 +26,7 @@
       .sort__image {
         width: 28px;
         height: 20px;
-      }
-
-      .sort__text {
-        margin: 0 0 0 8px;
+        margin: 0 8px 0 0;
       }
     }
   }
@@ -55,7 +52,8 @@
     gap: 8px;
     right: -15px;
     top: 53px;
-
+    cursor: pointer;
+    
     &.active {
       visibility: visible;
     } 
@@ -80,5 +78,30 @@
   .sort__link_active {
     background: var(--background-light-gray, #f4f6f7);
   }
+
+  .sort__link:hover {
+    background: var(--background-light-gray, #f4f6f7);
+  }
 }
 
+
+@media screen and (max-width: 874px) {
+  .sort {
+    .sort__label {
+      justify-content: flex-end;
+  .sort__text-box {
+
+padding: 0px;
+  }
+}
+  }
+
+.sort__text {
+  display: none;
+}
+
+.sort {
+  max-width: 80px;
+}
+
+}

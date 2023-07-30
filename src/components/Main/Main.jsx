@@ -1,17 +1,30 @@
+import React, { useState } from 'react';
 import './Main.scss';
+import Info from '../Info/Info';
 import Input from '../Input/Input';
+import AudioRecorder from '../AudioRecorder/AudioRecorder';
+import Checkbox from '../Checkbox/Checkbox';
+
 
 function Main () {
+  const [onText, setOnText] = useState(true);
+
+console.log(onText)
   return (
     <main className='content'>
-      <h1 className='content__title'>Быстрый способ превратить хаотичные мысли в чистый текст</h1>
-      <li className='content__container'>
-        <ul className='content__card'>Диктуйте всё, что у вас на уме</ul>
-        <ul className='content__card'>Говорите, что сделать с текстом</ul>
-        <ul className='content__card'>Получайте результат</ul>
-      </li>
 
-      <Input />
+      <div className='content__box'>
+
+        {  onText ? <Info /> : ''}
+
+      </div>
+
+    <div className='form-block'>
+      { onText ? <Input /> : <AudioRecorder /> }
+
+      <Checkbox setOnText={setOnText} onText={onText} />
+    </div> 
+
     </main>
   )
 }

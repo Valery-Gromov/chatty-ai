@@ -1,0 +1,75 @@
+.recorder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+
+
+  .recorder__time-block {
+    margin: 0 0 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  .recorder__time-block-image {
+    width: 67px;
+    height: 48px;
+  }
+    .recorder__time-block-time {
+      color:  #21201f;
+      font-family: 'Unbounded';
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 40px;
+      margin: 8px 0 0;
+    }
+  }
+
+  .recorder__button-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 70px;
+    background: #fff;
+    border: none;
+    box-shadow: 0px 4px 8px 0px #e6ebf5;
+    margin: 0 48px 0;
+  }
+
+  .button_mini {
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button__image {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .button__image_mini {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  .button__icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background: #21201f;
+    margin: auto;
+  }
+}

@@ -1,7 +1,7 @@
 .form {
   box-sizing: border-box;
   padding: 0 24px;
-  margin: 376px auto 0;
+  margin: 0 auto;
   width: 576px;
 height: 56px;
 border: none;
@@ -14,12 +14,19 @@ border: none;
   border-radius: 46px;
 background: var(--white, #FFF);
 
+&:hover {
+border: 1px solid #21201F;
+}
+
+
 .form__input {
   border: none;
   outline: none;
   height: 20px;
   width: calc(100% - 20px);
 }
+
+
 
 .form__button {
   padding: 0;
@@ -35,48 +42,10 @@ border: none;
   width: 24px;
 height: 24px;
 }
-
-
 }
 
-
-
-// .search__form:invalid {
-//   color: #FF4062;
-// }
-
-// .search__button_disabled {
-//   background-color: #F8F8F8;
-// }
-
-// @media screen and (max-width: 924px) {
-//   .search {
-//     padding: 70px 0 109px;
-//   }
-
-//   .search__form-element {
-//     padding: 0 20px 0 19px;
-//   }
-
-//   .search__form {
-//     width: calc(100% - 280px);
-//   }
-// }
-
-// @media screen and (max-width: 577px) {
-//   .search {
-//     padding: 80px 0 44px;
-//   }
-
-//   .search__button {
-//     margin: 0 0 0 10px;
-//   }
-
-//   .search__button-icon {
-//     display: none;
-//   }
-
-//   .search__form {
-//     width: 100%;
-//   }
-// }
+@media screen and (max-width: 658px){
+.form {
+  width: 100%;
+}
+}

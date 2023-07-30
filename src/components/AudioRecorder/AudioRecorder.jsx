@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { API_KEY_ID, API_KEY_SECRET, LANG, FILE_PATH, URL_CREATE, RESULT_TYPE } from "../../constants/constants";
+import Voice from '../../images/voice.svg';
 import Microphone from '../../images/microphone.svg';
+import Delete from '../../images/delete-min.svg';
+import Restart from '../../images/restart-min.svg';
+import './AudioRecorder.scss';
+import '../Animation/Animation.scss';
 
 const AudioRecorder = () => {
   const [onRecording, setOnRecording] = useState(false);
@@ -93,16 +98,49 @@ const AudioRecorder = () => {
   return (
     <div className="recorder">
 
-      <button className="button" onClick={ !onRecording ? startRecording : stopRecording}>
-         {
+      {
+        onRecording
+        ? (
+          <div className="recorder__time-block">
+            <img alt="" className="recorder__time-block-image" src={Voice} />
+            <span className="recorder__time-block-time">2:57</span>
+          </div>
+          )
+          : ''
+        }
 
-            !onRecording ? (<img className='button__image' src={Microphone}/>) : (<div className="button__icon"></div>)
+      <div className="recorder__button-block">
+      {
+        onRecording
+        ? (
+          <button className="button button_mini animation__button" onClick={() => setOnRecording(false)}>
+            <img className='button__image_mini' src={Restart}/>
+          </button>
+          )
+        : ''
+      }
 
+      <button className="button animation__button" onClick={ !onRecording ? startRecording : stopRecording}>
+         { !onRecording
+         ? (<img className='button__image' src={Microphone}/>)
+         : (<div className="button__icon"></div>)
          } 
-      </button>      
+      </button>
+
+      {
+        onRecording
+        ? (
+          <button className="button button_mini animation__button" onClick={() => setOnRecording(false)}>
+            <img className='button__image_mini' src={Delete}/>
+           </button>
+          )
+        : ''
+      }
+
+</div>
   
       {/* <button onClick={playAudio} disabled={!audioSrc}>Play Audio</button> */}
-      <div className="button__block">
+      {/* <div className="button__block">
       <button className={`recorder__button ${!audioSrc && 'disabled'}`} onClick={sendAudio} disabled={!audioSrc}>
         Send Audio
       </button>
@@ -110,9 +148,9 @@ const AudioRecorder = () => {
       <button className={`recorder__button ${!taskId && 'disabled'}`}  onClick={returnAudio} disabled={!taskId}>
         Return Audio
       </button>
-      </div>
+      </div> */}
 
-      {audioSrc && <audio src={audioSrc} controls />}
+      {/* {audioSrc && <audio src={audioSrc} controls />} */}
       
     </div>
   );
