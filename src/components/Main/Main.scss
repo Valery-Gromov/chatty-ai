@@ -1,0 +1,28 @@
+.content {
+  width: 100%;
+  // height: 920px;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 96px 0 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  .content__box {
+    width: 100%;
+  }
+
+  .form-block {
+    width: 100%;
+    // border: solid pink 1px;
+  }
+}
+
+@media screen and (max-width: 874px){
+  .content {
+  padding: 24px 16px;
+  }
+}
+
+
