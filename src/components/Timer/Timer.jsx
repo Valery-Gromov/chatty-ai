@@ -6,9 +6,6 @@ function Timer() {
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
 
-
-  console.log(seconds, minutes)
-
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (minutes < 3 && seconds < 59) {

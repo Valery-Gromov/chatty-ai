@@ -16,10 +16,12 @@ const AudioRecorder = (props) => {
 
   const startRecording = () => {
     setOnRecording(true);
+    
     navigator.mediaDevices.getUserMedia({ audio: true })
     .then((stream) => {
       const recorder = new MediaRecorder(stream);
       recorder.start();
+
       console.log("start");
       setMediaRecorder(recorder);
     });

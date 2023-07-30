@@ -6,7 +6,6 @@ import AudioRecorder from '../AudioRecorder/AudioRecorder';
 import Checkbox from '../Checkbox/Checkbox';
 import Results from '../Results/Results';
 
-
 function Main () {
   const [onText, setOnText] = useState(true);
   const [showInfo, setShowInfo] = useState(true);
@@ -32,8 +31,6 @@ function Main () {
 
       <Checkbox setOnText={setOnText} onText={onText} />
     </div> 
-
-    {/* <MedRecorder /> */}
 
     </main>
   )

@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Info.scss";
 
 function Info() {
-  const [onText, setOnText] = useState(true);
 
-  console.log(onText);
   return (
     <div className="info">
       <h1 className="info__title">
