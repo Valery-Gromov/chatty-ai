@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import { API_KEY_ID, API_KEY_SECRET, LANG, FILE_PATH, URL_CREATE, RESULT_TYPE } from "../../constants/constants";
-import Voice from '../../images/voice.svg';
+import Timer from "../Timer/Timer";
 import Microphone from '../../images/microphone.svg';
 import Delete from '../../images/delete-min.svg';
 import Restart from '../../images/restart-min.svg';
 import './AudioRecorder.scss';
 import '../Animation/Animation.scss';
 
-const AudioRecorder = () => {
+const AudioRecorder = (props) => {
   const [onRecording, setOnRecording] = useState(false);
   const [mediaRecorder, setMediaRecorder] = useState(null);
   const [audioSrc, setAudioSrc] = useState(null);
   const [taskId, setTaskId] = useState(null);
+  const { handleContentState } = props;
 
   const startRecording = () => {
     setOnRecording(true);
-    navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
+    navigator.mediaDevices.getUserMedia({ audio: true })
+    .then((stream) => {
       const recorder = new MediaRecorder(stream);
       recorder.start();
       console.log("start");
@@ -96,18 +98,9 @@ const AudioRecorder = () => {
   };
 
   return (
-    <div className="recorder">
+    <div className="recorder" onClick={handleContentState}>
 
-      {
-        onRecording
-        ? (
-          <div className="recorder__time-block">
-            <img alt="" className="recorder__time-block-image" src={Voice} />
-            <span className="recorder__time-block-time">2:57</span>
-          </div>
-          )
-          : ''
-        }
+      { onRecording && <Timer /> }
 
       <div className="recorder__button-block">
       {

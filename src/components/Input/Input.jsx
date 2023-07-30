@@ -3,11 +3,12 @@ import './Input.scss';
 import SendButton from '../../images/send-message.svg';
 import SendButtonActive from '../../images/send-message-active.svg';
 
-function Input () {
+function Input (props) {
   const [onLoading, setOnLoading] = useState(false);
   const [isValid, setIsValid] = useState(false);
   const [search, setSearch] = useState('');
 
+  const { handleContentState, handleTextRender } = props;
 
 
   function handleSearch(e) {
@@ -21,9 +22,14 @@ function Input () {
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    // localStorage.setItem(searchType, search);
-    console.log('submit')
+    handleTextRender();
+    localStorage.setItem('original-text', search);
+    localStorage.setItem('editedText', search);
+    // getMessages(search);
+    console.log('submit');
   }
+
+  console.log(search);
 
   return (
     <form className='form' onSubmit={handleFormSubmit} noValidate>
@@ -43,6 +49,7 @@ function Input () {
           // disabled={!isValid || loading}
           type='submit'
           // className={`search__button ${!isValid || loading ? 'search__button_disabled' : 'animation__button'}`}
+          onClick={handleContentState}
         >
           <img src={isValid ? SendButtonActive : SendButton } className='form__icon' alt="Иконка кнопки поиска. Луппа." />
         </button>

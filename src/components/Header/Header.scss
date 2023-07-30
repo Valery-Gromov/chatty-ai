@@ -7,10 +7,10 @@ align-items: center;
 
   .header__history {
     width: 140px;
-    color: #000;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    cursor: pointer;
 
     .header__history-image {
       width: 24px;
@@ -23,6 +23,14 @@ align-items: center;
       font-weight: 500;
       line-height: 24px;
       margin: 0;
+    }
+
+    .header__text.hover {
+      background-image: linear-gradient(90deg, rgba(131, 65, 239, 1) 0%, rgba(63, 104, 249, 1) 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
     }
   }
 
