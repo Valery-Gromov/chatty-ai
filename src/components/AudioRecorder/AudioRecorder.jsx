@@ -7,11 +7,12 @@ import Restart from '../../images/restart-min.svg';
 import './AudioRecorder.scss';
 import '../Animation/Animation.scss';
 
-const AudioRecorder = () => {
+const AudioRecorder = (props) => {
   const [onRecording, setOnRecording] = useState(false);
   const [mediaRecorder, setMediaRecorder] = useState(null);
   const [audioSrc, setAudioSrc] = useState(null);
   const [taskId, setTaskId] = useState(null);
+  const { handleContentState } = props;
 
   const startRecording = () => {
     setOnRecording(true);
@@ -96,7 +97,7 @@ const AudioRecorder = () => {
   };
 
   return (
-    <div className="recorder">
+    <div className="recorder" onClick={handleContentState}>
 
       {
         onRecording

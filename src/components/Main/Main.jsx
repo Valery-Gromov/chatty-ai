@@ -4,10 +4,18 @@ import Info from '../Info/Info';
 import Input from '../Input/Input';
 import AudioRecorder from '../AudioRecorder/AudioRecorder';
 import Checkbox from '../Checkbox/Checkbox';
+import Results from '../Results/Results';
 
 
 function Main () {
   const [onText, setOnText] = useState(true);
+  const [showInfo, setShowInfo] = useState(true);
+  const [showResults, setShowResults] = useState(false);
+
+  const handleContentState = () => {
+    setShowInfo(false);
+    setShowResults(true);
+  }
 
 console.log(onText)
   return (
@@ -15,12 +23,13 @@ console.log(onText)
 
       <div className='content__box'>
 
-        {  onText ? <Info /> : ''}
+        { showInfo ? <Info /> : ''}
+        { showResults && <Results />}
 
       </div>
 
     <div className='form-block'>
-      { onText ? <Input /> : <AudioRecorder /> }
+      { onText ? <Input handleContentState={handleContentState} /> : <AudioRecorder handleContentState={handleContentState} /> }
 
       <Checkbox setOnText={setOnText} onText={onText} />
     </div> 
