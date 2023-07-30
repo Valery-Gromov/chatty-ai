@@ -4,12 +4,12 @@ import Info from '../Info/Info';
 import Input from '../Input/Input';
 import AudioRecorder from '../AudioRecorder/AudioRecorder';
 import Checkbox from '../Checkbox/Checkbox';
+import MedRecorder from '../MediaRecorder/MediaRecorder';
 
 
 function Main () {
   const [onText, setOnText] = useState(true);
 
-console.log(onText)
   return (
     <main className='content'>
 
@@ -24,6 +24,8 @@ console.log(onText)
 
       <Checkbox setOnText={setOnText} onText={onText} />
     </div> 
+
+    {/* <MedRecorder /> */}
 
     </main>
   )

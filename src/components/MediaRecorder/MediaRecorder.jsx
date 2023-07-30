@@ -4,10 +4,10 @@ import Voice from '../../images/voice.svg';
 import Microphone from '../../images/microphone.svg';
 import Delete from '../../images/delete-min.svg';
 import Restart from '../../images/restart-min.svg';
-import './AudioRecorder.scss';
+import '../AudioRecorder/AudioRecorder.scss';
 import '../Animation/Animation.scss';
 
-const AudioRecorder = () => {
+function MedRecorder () {
   const [onRecording, setOnRecording] = useState(false);
   const [mediaRecorder, setMediaRecorder] = useState(null);
   const [audioSrc, setAudioSrc] = useState(null);
@@ -30,8 +30,8 @@ const AudioRecorder = () => {
       console.log("stop");
       mediaRecorder.stop();
       mediaRecorder.ondataavailable = (event) => {
-        
-        const audioBlob = new Blob([event.data], { type: "audio/wav" });
+        const audioBlob = new Blob([event.data], { type: "audio/mp3" });
+        console.log(audioBlob);
         const audioUrl = URL.createObjectURL(audioBlob);
 
         setAudioSrc(audioUrl);
@@ -53,8 +53,8 @@ const AudioRecorder = () => {
       // myHeaders.append("Content-Type", 'application/x-www-form-urlencoded');
 
       const formdata = new FormData();
-      formdata.append("remotePath", FILE_PATH);
-      // formdata.append("remotePath", audioSrc);
+      // formdata.append("remotePath", FILE_PATH);
+      formdata.append("remotePath", audioSrc);
       formdata.append("lang", LANG);
 
       const requestOptions = {
@@ -140,8 +140,8 @@ const AudioRecorder = () => {
 
 </div>
   
-      {/* <button onClick={playAudio} disabled={!audioSrc}>Play Audio</button> */}
-      {/* <div className="button__block">
+      <button onClick={playAudio} disabled={!audioSrc}>Play Audio</button>
+      <div className="button__block">
       <button className={`recorder__button ${!audioSrc && 'disabled'}`} onClick={sendAudio} disabled={!audioSrc}>
         Send Audio
       </button>
@@ -149,12 +149,12 @@ const AudioRecorder = () => {
       <button className={`recorder__button ${!taskId && 'disabled'}`}  onClick={returnAudio} disabled={!taskId}>
         Return Audio
       </button>
-      </div> */}
+      </div>
 
-      {/* {audioSrc && <audio src={audioSrc} controls />} */}
+      {audioSrc && <audio src={audioSrc} controls />}
       
     </div>
   );
 };
 
-export default AudioRecorder;
+export default MedRecorder;
