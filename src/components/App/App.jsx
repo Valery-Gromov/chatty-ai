@@ -10,29 +10,7 @@ function App() {
   const [previousChats, setPreviousChats] = useState([]);
   const [currentTitle, setCurrentTitle] = useState(null);
   const [popupIsOpen, setPopupIsOpen] = useState(false);
-
-  useEffect(() => {
-    if (!currentTitle && value && message) {
-      setCurrentTitle(value)
-    }
-
-    if (currentTitle && value && message) {
-      setPreviousChats(prevChats => (
-        [...prevChats, 
-          {
-            title: currentTitle,
-            role: 'user',
-            content: value
-          },
-          {
-            title: currentTitle,
-            role: message.role,
-            content: message.content
-          }
-        ]
-      ))
-    }
-  }, [message, currentTitle])
+  const [updateText, setUpdateText] = useState(false);
 
   const getMessages = async (value) => {
     const options = {
@@ -49,20 +27,36 @@ function App() {
       const response = await fetch('http://localhost:8000/competions', options)
       const data = await response.json();
       console.log(data);
-      setMessage(data.choices[0].message)
+      setMessage(data.choices[0].message);
       localStorage.setItem('editedText', data.choices[0].message.content);
+      setUpdateText(!updateText);
     } catch (error) {
       console.error(error);
     }
   }
 
-  const createNewChat = () => {
-    setMessage(null)
-    setValue('')
-    setCurrentTitle(null)
-  }
+  const fixTextErorrs = async (value) => {
+    const options = {
+      method: 'POST',
+      body: JSON.stringify({
+        message: `Убери из этого текста все грамматические, орфографические, пунктуационные и другие ошибки: ${value}`
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    }
 
-  const currentChat = previousChats.filter(previousChat => previousChat.title === currentTitle)
+    try {
+      const response = await fetch('http://localhost:8000/competions', options)
+      const data = await response.json();
+      console.log(data);
+      setMessage(data.choices[0].message);
+      localStorage.setItem('editedText', data.choices[0].message.content);
+      setUpdateText(!updateText);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   const handlePopupIsOpen = () => {
     setPopupIsOpen(true);
@@ -71,7 +65,7 @@ function App() {
   return (
     <div className="page">
       <Header />
-      <Main getMessages={getMessages} handlePopupIsOpen={handlePopupIsOpen} />
+      <Main getMessages={getMessages} handlePopupIsOpen={handlePopupIsOpen} fixTextErorrs={fixTextErorrs} updateText={updateText} />
       <Popup popupIsOpen={popupIsOpen} setPopupIsOpen={setPopupIsOpen} />
     </div>
   );

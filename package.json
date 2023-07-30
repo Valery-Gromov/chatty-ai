@@ -1,5 +1,6 @@
 {
   "name": "chatty-ai",
+  "homepage": "https://valery-gromov.github.io/chatty-ai/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

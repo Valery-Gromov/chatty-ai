@@ -13,7 +13,7 @@ function Main (props) {
   const [showResults, setShowResults] = useState(false);
   const [textRender, setTextRender] = useState(false);
 
-  const { getMessages, handlePopupIsOpen } = props
+  const { getMessages, handlePopupIsOpen, fixTextErorrs, updateText } = props
 
   const handleContentState = () => {
     setShowInfo(false);
@@ -31,7 +31,7 @@ console.log(onText)
       <div className='content__box'>
 
         { showInfo ? <Info /> : ''}
-        { showResults && <Results textRender={textRender} getMessages={getMessages} handlePopupIsOpen={handlePopupIsOpen} />}
+        { showResults && <Results textRender={textRender} getMessages={getMessages} handlePopupIsOpen={handlePopupIsOpen} fixTextErorrs={fixTextErorrs} updateText={updateText} />}
 
       </div>
 

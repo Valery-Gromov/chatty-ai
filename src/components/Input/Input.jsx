@@ -24,6 +24,7 @@ function Input (props) {
     e.preventDefault();
     handleTextRender();
     localStorage.setItem('original-text', search);
+    localStorage.setItem('editedText', search);
     // getMessages(search);
     console.log('submit');
   }

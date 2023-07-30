@@ -5,18 +5,21 @@ import { useEffect, useState } from 'react';
 
 function Results(props) {
     const [editedText, setEditedText] = useState(null);
-    const { textRender, getMessages, handlePopupIsOpen } = props;
+    const { textRender, getMessages, handlePopupIsOpen, fixTextErorrs, updateText } = props;
 
     useEffect(() => {
         const text = localStorage.getItem('editedText');
         setEditedText(text);
 
         console.log(editedText);
-    }, [textRender])
+    }, [textRender, updateText])
 
     const handleEditTransformButton = () => {
-
         getMessages(editedText);
+    }
+
+    const handleFixErrorsButton = () => {
+        fixTextErorrs(editedText);
     }
 
     return (
@@ -44,7 +47,7 @@ function Results(props) {
             </div>
             <div className='results__transform-buttons-container'>
                 <button className="results__transform-button" onClick={handleEditTransformButton}>🧠 Переписать</button>
-                <button className="results__transform-button">📝 Исправить ошибки</button>
+                <button className="results__transform-button" onClick={handleFixErrorsButton}>📝 Исправить ошибки</button>
             </div>
         </div>
     );
