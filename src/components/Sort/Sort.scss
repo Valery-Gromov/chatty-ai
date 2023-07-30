@@ -1,10 +1,11 @@
 .sort {
   position: relative;
-  color: var(--text-black, #21201f);
+  color: #21201f;
   font-size: 14px;
   font-weight: 600;
   line-height: 16px;
   width: 140px;
+  cursor: pointer;
 
   .sort__label {
     display: flex;
@@ -14,6 +15,11 @@
     .sort__icon {
       width: 24px;
       height: 24px;
+      transition: transform 1s ease-in-out;
+    }
+
+    .sort__icon.opened {
+      transform: rotate(180deg);
     }
 
     .sort__text-box {
@@ -35,7 +41,7 @@
     margin: 0;
     list-style-type: none;
     visibility: hidden;
-    transition: visibility .3s;
+    transition: visibility 2s ease-in-out;
     // visibility: visible;
     position: absolute;
     border-radius: 12px;

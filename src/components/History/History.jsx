@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import './History.scss';
 
 function History ({ isOpenHistory, setIsOpenHistory }) {
-  // const showHideClassName = show ? "modal display-block" : "modal display-none";
+  const [selected, setSelected] = useState(0);
+
+  const onClickListIttem = (i) => {
+    setSelected(i);
+    setIsOpenHistory(false);
+  }
 
   const listItems = [
     { 'text': 'Запросов Запросов Запросов Запросов', 'data': '24 июля 2023' },
@@ -27,7 +32,7 @@ function closeByOverlay(e) {
           
          {listItems.map((item, index) => (
 
-            <li className="history__element" key={index}>
+            <li onClick={() => onClickListIttem(index)} className={`history__element ${selected === index && 'active'}`} key={index}>
               <h1 className="history__element-title">{item.text}</h1>
               <p className="history__element-subtitle">{item.data}</p>
             </li>

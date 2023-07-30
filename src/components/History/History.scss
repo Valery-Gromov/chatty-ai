@@ -66,6 +66,7 @@ justify-content: space-between;
 align-items: end;
 box-sizing: border-box;
 padding: 16px;
+cursor: pointer;
 
 
 .history__element-title {
@@ -89,6 +90,16 @@ line-height: 16px;
 margin: 0;
 }
 }
+
+.history__element:hover {
+    // border: 1px solid transparent;
+    // background-image: linear-gradient(90deg, rgba(131, 65, 239, 1) 0%, rgba(63, 104, 249, 1) 100%);
+    border: 1px solid rgba(63, 104, 249, 1);
+}
+.history__element.active {
+  border: 1px solid #21201F;
+}
+
 
 
 }
