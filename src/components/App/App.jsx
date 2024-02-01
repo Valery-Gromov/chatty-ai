@@ -12,7 +12,7 @@ function App() {
   const [currentTitle, setCurrentTitle] = useState(null);
   const [popupIsOpen, setPopupIsOpen] = useState(false);
   const [updateText, setUpdateText] = useState(false);
-  const [lang, setLang] = useState('eng');
+  const [lang, setLang] = useState('English');
 
   const getMessages = async (value) => {
     const options = {

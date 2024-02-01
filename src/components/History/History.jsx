@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { LanguageContext } from '../../contexts/LanguageContext';
 import './History.scss';
 
 function History ({ isOpenHistory, setIsOpenHistory }) {
   const [selected, setSelected] = useState(0);
+  const {lang} = React.useContext(LanguageContext);
 
   const onClickListIttem = (i) => {
     setSelected(i);
@@ -10,9 +12,8 @@ function History ({ isOpenHistory, setIsOpenHistory }) {
   }
 
   const listItems = [
-    { 'text': 'Запросов Запросов Запросов Запросов', 'data': '24 июля 2023' },
     { 'text': 'onRecordingComplete', 'data': '28 июля 2023' },
-    { 'text': 'hdnsmlcms;,s;,c;l<', 'data': '26 июля 2023' }
+    { 'text': 'onComplete', 'data': '26 июля 2023' }
 ];
 
 function closeByOverlay(e) {
@@ -27,7 +28,7 @@ function closeByOverlay(e) {
      className={`history ${ isOpenHistory ? 'opened' : ''}`}>
       <div className="history__popup">
 
-      <h2 className="history__text">Request History</h2>
+      <h2 className="history__text">{lang === 'Russian' ? 'История запросов' : 'Request history'}</h2>
         <ul className="history__list">
           
          {listItems.map((item, index) => (

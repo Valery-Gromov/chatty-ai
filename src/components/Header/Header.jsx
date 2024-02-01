@@ -5,10 +5,12 @@ import './Header.scss';
 import HistoryIcon from '../../images/history.svg';
 import HistoryIconHover from '../../images/history-hover.svg';
 import History from '../History/History';
+import { LanguageContext } from '../../contexts/LanguageContext';
 
 function Header () {
   const [isOpenHistory, setIsOpenHistory] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const {lang} = React.useContext(LanguageContext);
 
 useEffect(() => {
   if(isOpenHistory) {
@@ -29,7 +31,7 @@ return (
       className='header__history' >
 
       <img className='header__history-image' src={isHovered ? HistoryIconHover : HistoryIcon} />
-      <p className={`header__text ${isHovered && 'hover'}`}>History</p>
+      <p className={`header__text ${isHovered && 'hover'}`}>{lang === 'Russian' ? 'История' : 'History'}</p>
 
     </div>
   )

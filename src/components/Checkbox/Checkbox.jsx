@@ -5,8 +5,10 @@ import MicroMin from "../../images/micro-min.svg";
 import TextMinActive from "../../images/text-min-active.svg";
 import TextMin from "../../images/text-min.svg";
 import "../Animation/Animation.scss";
+import { LanguageContext } from '../../contexts/LanguageContext';
 
 function Checkbox({ onText, setOnText }) {
+  const {lang} = React.useContext(LanguageContext);
     // const [isChecked, setIsChecked] = useState(false);
 
     function handleCheckbox() {
@@ -21,12 +23,12 @@ function Checkbox({ onText, setOnText }) {
       <div className="checkbox" onClick={handleCheckbox}>
         <div className={`checkbox__element ${onText ? "" : "active"}`}>
           <img className="checkbox__icon" src={onText ? MicroMin : MicroMinActive} />
-          <p className="checkbox__text">Voice</p>
+          <p className="checkbox__text">{lang === 'Russian' ? 'Голос' : 'Voice'}</p>
         </div>
 
         <div className={`checkbox__element ${onText ? "active" : ""}`}>
           <img className="checkbox__icon" src={onText ? TextMinActive : TextMin}/>
-          <p className="checkbox__text">Text</p>
+          <p className="checkbox__text">{lang === 'Russian' ? 'Текст' : 'Text'}</p>
         </div>
       </div>
 

@@ -8,13 +8,14 @@ function Sort() {
   const [open, setOpen] = React.useState(false);
   const [selected, setSelected] = React.useState(0);
 
-  const { lang, setLang } = React.useContext(LanguageContext);
+  const { setLang } = React.useContext(LanguageContext);
 
   const sortName = arrSort[selected].text;
   const sortImage = arrSort[selected].image;
 
-  const onClickListIttem = (i) => {
+  const onClickListIttem = (data, i) => {
     setSelected(i);
+    setLang(data.text);
     setOpen(false);
   }
 
@@ -33,7 +34,7 @@ function Sort() {
         <ul className={`sort__popup ${open ? 'active' : ''}`}>
 
             {arrSort.map((data, i) => (
-              <li onClick={() => onClickListIttem(i)} key={i} className={`sort__element sort__link ${selected === i ? "sort__link_active" : ""}`}>
+              <li onClick={() => onClickListIttem(data, i)} key={i} className={`sort__element sort__link ${selected === i ? "sort__link_active" : ""}`}>
                 <img className="sort__icon sort__list-icon" src={data.image}/>
                 {data.text}
               </li>

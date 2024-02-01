@@ -23,8 +23,6 @@ function Main (props) {
   const handleTextRender = () => {
     setTextRender(!textRender);
   }
-
-console.log(onText)
   return (
     <main className='content'>
 

@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import './Input.scss';
 import SendButton from '../../images/send-message.svg';
 import SendButtonActive from '../../images/send-message-active.svg';
+import { LanguageContext } from '../../contexts/LanguageContext';
 
 function Input (props) {
   const [onLoading, setOnLoading] = useState(false);
   const [isValid, setIsValid] = useState(false);
   const [search, setSearch] = useState('');
+  const {lang} = React.useContext(LanguageContext);
 
   const { handleContentState, handleTextRender } = props;
 
@@ -37,7 +39,7 @@ function Input (props) {
         <input
           className="form__input"
           type="text"
-          placeholder="Enter a request"
+          placeholder={lang === 'Russian' ? 'Введите запрос' : 'Enter a request'}
           onChange={handleSearch}
           value={search}
           id="search"
