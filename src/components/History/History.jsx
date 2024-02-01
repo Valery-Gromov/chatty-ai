@@ -27,7 +27,7 @@ function closeByOverlay(e) {
      className={`history ${ isOpenHistory ? 'opened' : ''}`}>
       <div className="history__popup">
 
-      <h2 className="history__text">История запросов</h2>
+      <h2 className="history__text">Request History</h2>
         <ul className="history__list">
           
          {listItems.map((item, index) => (

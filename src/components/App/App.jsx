@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Popup from '../Popup/Popup';
 import { useEffect, useState } from 'react';
+import { LanguageContext } from '../../contexts/LanguageContext';
 
 function App() {
   const [value, setValue] = useState(null);
@@ -11,6 +12,7 @@ function App() {
   const [currentTitle, setCurrentTitle] = useState(null);
   const [popupIsOpen, setPopupIsOpen] = useState(false);
   const [updateText, setUpdateText] = useState(false);
+  const [lang, setLang] = useState('eng');
 
   const getMessages = async (value) => {
     const options = {
@@ -63,11 +65,13 @@ function App() {
   }
 
   return (
+    <LanguageContext.Provider value={{lang, setLang}}> 
     <div className="page">
       <Header />
       <Main getMessages={getMessages} handlePopupIsOpen={handlePopupIsOpen} fixTextErorrs={fixTextErorrs} updateText={updateText} />
       <Popup popupIsOpen={popupIsOpen} setPopupIsOpen={setPopupIsOpen} />
     </div>
+    </LanguageContext.Provider>
   );
 }
 

@@ -5,9 +5,9 @@ import French from '../images/language/french.svg';
 import Chinese from '../images/language/cinese.svg';
 
 export const arrSort = [
-  {text: "Russian", image: Russian},
   {text: "English", image: English},
-  {text:  "Arabic", image: Arabic},
-  {text: "French", image: French},
-  {text: "Chinese", image: Chinese}
+  {text: "Russian", image: Russian},
+  // {text:  "Arabic", image: Arabic},
+  // {text: "French", image: French},
+  // {text: "Chinese", image: Chinese}
 ];

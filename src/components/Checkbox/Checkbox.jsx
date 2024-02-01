@@ -21,12 +21,12 @@ function Checkbox({ onText, setOnText }) {
       <div className="checkbox" onClick={handleCheckbox}>
         <div className={`checkbox__element ${onText ? "" : "active"}`}>
           <img className="checkbox__icon" src={onText ? MicroMin : MicroMinActive} />
-          <p className="checkbox__text">Голос</p>
+          <p className="checkbox__text">Voice</p>
         </div>
 
         <div className={`checkbox__element ${onText ? "active" : ""}`}>
           <img className="checkbox__icon" src={onText ? TextMinActive : TextMin}/>
-          <p className="checkbox__text">Текст</p>
+          <p className="checkbox__text">Text</p>
         </div>
       </div>
 

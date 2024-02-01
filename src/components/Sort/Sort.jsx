@@ -2,10 +2,13 @@ import React from "react";
 import "./Sort.scss";
 import Icon from "../../images/search-language.svg";
 import { arrSort } from "../../constants/data";
+import { LanguageContext } from "../../contexts/LanguageContext";
 
 function Sort() {
   const [open, setOpen] = React.useState(false);
   const [selected, setSelected] = React.useState(0);
+
+  const { lang, setLang } = React.useContext(LanguageContext);
 
   const sortName = arrSort[selected].text;
   const sortImage = arrSort[selected].image;

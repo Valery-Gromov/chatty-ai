@@ -28,14 +28,14 @@ function Results(props) {
                 <div className="results__title-container">
                     <div>
                         <h2 className="result__title">
-                            Ваша заметка
+                            Your note
                         </h2>
                         <span className="results__date" >
-                            от 24 июля 2023
+                            July 24, 2023
                         </span>
                     </div>
                     <button className="results__open-button" onClick={handlePopupIsOpen}>
-                        Открыть оригинальный текст
+                        Open the original text
                     </button>
                 </div>
                 <textarea className="results__text" value={editedText || ''} />
@@ -46,8 +46,8 @@ function Results(props) {
                 </div>
             </div>
             <div className='results__transform-buttons-container'>
-                <button className="results__transform-button" onClick={handleEditTransformButton}>🧠 Переписать</button>
-                <button className="results__transform-button" onClick={handleFixErrorsButton}>📝 Исправить ошибки</button>
+                <button className="results__transform-button" onClick={handleEditTransformButton}>🧠 Rewrite</button>
+                <button className="results__transform-button" onClick={handleFixErrorsButton}>📝 Fix errors</button>
             </div>
         </div>
     );

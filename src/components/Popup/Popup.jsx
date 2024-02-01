@@ -18,8 +18,8 @@ function Popup(props) {
         <div className={popupIsOpen ? 'popup popup_active' : 'popup'}>
             <div className='popup__container'>
                 <div>
-                    <h3 className='popup__title'>Оригинальный текст</h3>
-                    <button className='popup__close-button' onClick={handlePopupClose}><img src={closeButtonImage} alt="закрыть" /></button>
+                    <h3 className='popup__title'>The original text</h3>
+                    <button className='popup__close-button' onClick={handlePopupClose}><img src={closeButtonImage} alt="close" /></button>
                 </div>
                 <p className='popup__text'>
                     {originalText}

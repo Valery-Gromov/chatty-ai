@@ -9,20 +9,20 @@ function Results() {
             <div className="results__title-container">
                 <div>
                     <h2 className="result__title">
-                        Ваша заметка
+                        Your note
                     </h2>
                     <span className="results__date" >
-                        от 24 июля 2023
+                        July 24, 2023
                     </span>
                 </div>
                 <button className="results__open-button">
-                    Открыть оригинальный текст
+                    Open the original text
                 </button>
             </div>
             <textarea className="results__text">
-                Эдди припомнил один из летних дней, когда ему было десять лет. Тогда на лесной прогалине любимая подруга детства рассказывала ему о том, что они будут делать, когда вырастут. Ее слова ослепляли сильнее, чем солнце. Он внимал ей с восхищением и удивлением и, когда она спросила, чем бы он хотел заниматься, ответил без промедления:
-                – Чем-нибудь правильным, – и добавил: – Надо бы совершить что-нибудь великое… Ну, то есть нам вдвоем.
-– Что же именно? – спросила она.
+                Eddie remembered one of the summer days when he was ten years old. Then, in a forest clearing, a beloved childhood friend told him about what they would do when they grew up. Her words were more blinding than the sun. He listened to her with admiration and surprise, and when she asked what he would like to do, he answered without delay:
+                –Something right," and added, "We should do something great."… Well, that is, just the two of us.
+– What is it exactly? "What is it?" she asked.
             </textarea>
             <div className="results__buttons-container">
                 <button className="results__option-button"><img src={deleteButton} /></button>

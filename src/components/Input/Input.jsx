@@ -37,7 +37,7 @@ function Input (props) {
         <input
           className="form__input"
           type="text"
-          placeholder="Введите запрос"
+          placeholder="Enter a request"
           onChange={handleSearch}
           value={search}
           id="search"
@@ -51,7 +51,7 @@ function Input (props) {
           // className={`search__button ${!isValid || loading ? 'search__button_disabled' : 'animation__button'}`}
           onClick={handleContentState}
         >
-          <img src={isValid ? SendButtonActive : SendButton } className='form__icon' alt="Иконка кнопки поиска. Луппа." />
+          <img src={isValid ? SendButtonActive : SendButton } className='form__icon' alt="The icon of the search button. Luppa." />
         </button>
 
     </form>

@@ -29,7 +29,7 @@ return (
       className='header__history' >
 
       <img className='header__history-image' src={isHovered ? HistoryIconHover : HistoryIcon} />
-      <p className={`header__text ${isHovered && 'hover'}`}>История</p>
+      <p className={`header__text ${isHovered && 'hover'}`}>History</p>
 
     </div>
   )
