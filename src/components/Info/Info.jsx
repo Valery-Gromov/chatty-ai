@@ -33,8 +33,6 @@ function Info() {
     }
   }, [lang])
 
-  console.log(lang);
-
   return (
     <div className="info">
       <h1 className="info__title">{textValue.infoTitle}</h1>

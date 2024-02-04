@@ -15,6 +15,7 @@ function App() {
   const [lang, setLang] = useState('English');
 
   const getMessages = async (value) => {
+    console.log(value);
     const options = {
       method: 'POST',
       body: JSON.stringify({
@@ -38,6 +39,7 @@ function App() {
   }
 
   const fixTextErorrs = async (value) => {
+    console.log(value);
     const options = {
       method: 'POST',
       body: JSON.stringify({

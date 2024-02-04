@@ -10,7 +10,7 @@ function Input (props) {
   const [search, setSearch] = useState('');
   const {lang} = React.useContext(LanguageContext);
 
-  const { handleContentState, handleTextRender } = props;
+  const { getMessages, handleContentState, handleTextRender } = props;
 
 
   function handleSearch(e) {
@@ -27,11 +27,9 @@ function Input (props) {
     handleTextRender();
     localStorage.setItem('original-text', search);
     localStorage.setItem('editedText', search);
-    // getMessages(search);
+    getMessages(search);
     console.log('submit');
   }
-
-  console.log(search);
 
   return (
     <form className='form' onSubmit={handleFormSubmit} noValidate>

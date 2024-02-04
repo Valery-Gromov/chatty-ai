@@ -13,7 +13,7 @@ function Main (props) {
   const [showResults, setShowResults] = useState(false);
   const [textRender, setTextRender] = useState(false);
 
-  const { getMessages, handlePopupIsOpen, fixTextErorrs, updateText } = props
+  const { sendRequest, getMessages, handlePopupIsOpen, fixTextErorrs, updateText } = props
 
   const handleContentState = () => {
     setShowInfo(false);
@@ -34,7 +34,7 @@ function Main (props) {
       </div>
 
     <div className='form-block'>
-      { onText ? <Input handleContentState={handleContentState} handleTextRender={handleTextRender} /> : <AudioRecorder handleContentState={handleContentState} getMessages={getMessages} /> }
+      { onText ? <Input getMessages={getMessages} handleContentState={handleContentState} handleTextRender={handleTextRender} /> : <AudioRecorder handleContentState={handleContentState} getMessages={getMessages} /> }
 
       <Checkbox setOnText={setOnText} onText={onText} />
     </div> 

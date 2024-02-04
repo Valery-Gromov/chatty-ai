@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-API_KEY = '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'
+API_KEY = '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'
 
 app.post('/competions', async (req, res) => {
     console.log(req.body);
@@ -25,7 +25,7 @@ app.post('/competions', async (req, res) => {
         })
     }
     try {
-        console.log(options);
+        // console.log(options);
         const response = await fetch('https://api.openai.com/v1/chat/completions', options);
         const data = await response.json();
 
