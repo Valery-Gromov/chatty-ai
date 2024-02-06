@@ -75,6 +75,7 @@
     line-height: 120%;
     resize: none;
     border: none;
+    outline: none;
   }
   
   .results__text:active {

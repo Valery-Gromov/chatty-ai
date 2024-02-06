@@ -3,13 +3,13 @@ import { LanguageContext } from '../../contexts/LanguageContext';
 import closeButtonImage from '../../images/x.svg'
 
 function Popup(props) {
-    const { popupIsOpen, setPopupIsOpen } = props;
+    const { popupIsOpen, setPopupIsOpen, updateOriginalText } = props;
     const {lang} = useContext(LanguageContext);
     const [originalText, setOriginalText] = useState(null);
 
     useEffect(() => {
         setOriginalText(localStorage.getItem('original-text'))
-    })
+    }, [updateOriginalText])
 
     const handlePopupClose = () => {
         setPopupIsOpen(false);

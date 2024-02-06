@@ -1,29 +1,11 @@
 import React, { useState } from "react";
 import "./Info.scss";
+import { ruInfoTextValues, engInfoTextValues } from "../../constants/data";
 import { LanguageContext } from '../../contexts/LanguageContext';
-
-const engInfoTextValues = {
-  infoTitle: 'A quick way to turn chaotic thoughts into pure text',
-  infoListTextDictate: 'Dictate whatever is on your mind',
-  infoListTextDoNext: 'Tell me what to do with the text',
-  infoListTextResults: 'Get the result',
-}
-
-const ruInfoTextValues = {
-  infoTitle: 'Быстрый способ превратить хаотичные мысли в чистый текст',
-  infoListTextDictate: 'Диктуйте всё, что у вас на уме',
-  infoListTextDoNext: 'Говорите, что сделать с текстом',
-  infoListTextResults: 'Получайте результат',
-}
 
 function Info() {
   const {lang, setLang} = React.useContext(LanguageContext);
-  const [textValue, setTextValue] = React.useState({
-    infoTitle: 'A quick way to turn chaotic thoughts into pure text',
-    infoListTextDictate: 'Dictate whatever is on your mind',
-    infoListTextDoNext: 'Tell me what to do with the text',
-    infoListTextResults: 'Get the result',
-  })
+  const [textValue, setTextValue] = React.useState({})
 
   React.useEffect(() => {
     if (lang === 'Russian') {

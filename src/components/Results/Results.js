@@ -1,31 +1,16 @@
+// import shareButton from '../../images/share.svg';
 import deleteButton from '../../images/delete.svg';
 import copyButton from '../../images/copy.svg';
-import shareButton from '../../images/share.svg';
 import { useEffect, useState, useContext } from 'react';
+import { engResultTextValues, ruResultTextValues } from '../../constants/data';
 import { LanguageContext } from '../../contexts/LanguageContext';
-
-const engResultTextValues = {
-    resultTitle: 'Your note',
-    resultButton: 'Open the original text',
-    resultButtonRewrite: '🧠 Rewrite',
-    resultButtonFix: '📝 Fix errors',
-  };
-  
-  const ruResultTextValues = {
-    resultTitle: 'Ваша заметка',
-    resultButton: 'Открыть оригинальный текст',
-    resultButtonRewrite: '🧠 Переписать',
-    resultButtonFix: '📝 Исправить ошибки',
-  };
+import copy from 'clipboard-copy';
 
 function Results(props) {
   const [editedText, setEditedText] = useState(null);
-  const { textRender, getMessages, handlePopupIsOpen, fixTextErorrs, updateText } = props;
-  const { lang, setLang } = useContext(LanguageContext);
-  const [textValue, setTextValue] = useState({
-    resultTitle: 'Your note',
-    resultButton: 'Open the original text',
-  });
+  const { editUserRequest, handlePopupIsOpen, fixTextErorrs, responseUpdate, handleDeleteResponse } = props;
+  const { lang } = useContext(LanguageContext);
+  const [textValue, setTextValue] = useState({});
 
   useEffect(() => {
     if (lang === 'Russian') {
@@ -38,12 +23,15 @@ function Results(props) {
   useEffect(() => {
     const text = localStorage.getItem('editedText');
     setEditedText(text);
+  }, [responseUpdate]);
 
-    console.log(editedText);
-  }, [textRender, updateText]);
+  const copyToClipboard = () => {
+    copy(editedText);
+    alert('Текст скопирован в буфер обмена!');
+  }
 
   const handleEditTransformButton = () => {
-    getMessages(editedText);
+    editUserRequest(editedText);
   };
 
   const handleFixErrorsButton = () => {
@@ -56,23 +44,22 @@ function Results(props) {
         <div className="results__title-container">
           <div>
             <h2 className="result__title">{textValue.resultTitle}</h2>
-            <span className="results__date">July 24, 2023</span>
           </div>
           <button className="results__open-button" onClick={handlePopupIsOpen}>
             {textValue.resultButton}
           </button>
         </div>
-        <textarea className="results__text" value={editedText || ''} />
+        <textarea className="results__text" value={editedText || ''} readOnly />
         <div className="results__buttons-container">
           <button className="results__option-button">
-            <img src={deleteButton} />
+            <img src={deleteButton} onClick={handleDeleteResponse} />
           </button>
-          <button className="results__option-button">
+          <button className="results__option-button" onClick={copyToClipboard} >
             <img src={copyButton} />
           </button>
-          <button className="results__option-button">
+          {/* <button className="results__option-button">
             <img src={shareButton} />
-          </button>
+          </button> */}
         </div>
       </div>
       <div className="results__transform-buttons-container">
